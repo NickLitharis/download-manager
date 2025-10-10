@@ -1,50 +1,60 @@
-# Desktop Download Manager - YouTube Media Downloader
+# Desktop Download Manager — YouTube media downloader
 
-## Overview
-The Desktop Download Manager is a user-friendly application designed for downloading audio and video files from YouTube. With a simple and intuitive interface, it allows users to easily download their favorite media content for offline access.
+Welcome — this is a compact Tkinter desktop app used in the university course "Python Programming" for learning practical Python, GUI programming, and working with third‑party tools.
 
-## Features
-- Download audio and video files from YouTube.
-- User-friendly interface for hassle-free downloads.
-- Seamless integration with YouTube.
-- High-quality media downloads.
-- Fast and efficient downloading process.
+The app lets you download audio and video from YouTube using yt-dlp and ffmpeg. It focuses on clarity and a small codebase so students can study the whole project.
 
-## How to Set It Up
-To set up the Desktop Download Manager, follow these steps:
+Quick start
 
-1. Install Python: If you don't have Python installed on your system, download and install it from the official [Python website](https://www.python.org/downloads/).
+1. Create and activate a virtual environment (recommended):
 
-2. Clone the Repository: Clone the Desktop Download Manager repository to your local machine using Git:
+```bash
+python -m venv .venv
+source .venv/bin/activate
+```
 
-   ```
-   git clone https://github.com/your-username/download-manager.git
-   ```
+2. Install Python dependencies:
 
-3. Navigate to the Project Directory: Change your working directory to the project folder:
+```bash
+pip install -r requirements.txt
+```
 
-   ```
-   cd download-manager
-   ```
+3. Install system ffmpeg (required for audio conversion):
 
-4. Install Dependencies: Run the following command to install the required dependencies:
+```bash
+sudo apt install ffmpeg    # Debian/Ubuntu
+```
 
-   ```
-   pip install -r requirements.txt
-   ```
+4. Run the app:
 
-5. Run the Application: Start the Desktop Download Manager by running the main script:
+```bash
+python main.py
+```
 
-   ```
-   python main.py
-   ```
+Project layout (canonical files)
 
-6. Start Downloading: You're all set! You can now start downloading audio and video files from YouTube with ease.
+- `main.py` — program entrypoint (calls `gui.run_ui()`).
+- `gui.py` — thin wrapper exposing the UI entrypoint. The actual implementation is in `ui.py`.
+- `ui.py` — Tkinter graphical interface and dialogs.
+- `controller.py` — orchestrates user requests and routes work to downloaders.
+- `audio_downloader.py` — audio download/FFmpeg conversion logic (yt-dlp wrapper).
+- `video_downloader.py` — video download logic (yt-dlp wrapper).
+- `playlist_parser.py` — parses a `.txt` playlist into search queries for batch downloads.
+
+
+Notes for students
+
+- This project demonstrates using `yt-dlp` programmatically and integrating `ffmpeg` for audio extraction.
+- The UI is intentionally small so you can trace the flow from `ui.py` -> `controller.py` -> `*_downloader.py`.
+
+
+Contributing
+- Feel free to open issues or submit PRs. If you want to reintroduce transliteration of input strings, add a small helper in `ui.py` or a new module and import it where needed.
+
 
 ## Development Team
-- Αλεξοπούλου Ολυμπία-Στεργιανή [@olumpiaalexopoulou](https://github.com/olumpiaalexopoulou)
-- Λιθαρής Νίκος [@NickLitharis](https://github.com/NickLitharis)
-- Νάσκος Θάνος [@NaskosAthanasios](https://github.com/NaskosAthanasios)
-- Τηλαβερίδου Ελένη [@tilav](https://github.com/tilav)
 
-Feel free to contribute to the project or report any issues on the [GitHub repository](https://github.com/your-username/download-manager).
+- [@olumpiaalexopoulou](https://github.com/olumpiaalexopoulou)
+- [@NickLitharis](https://github.com/NickLitharis)
+- [@NaskosAthanasios](https://github.com/NaskosAthanasios)
+- [@tilav](https://github.com/tilav)
