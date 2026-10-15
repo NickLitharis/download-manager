@@ -48,7 +48,7 @@ Notes for students
 
 
 Contributing
-- Feel free to open issues or submit PRs. If you want to reintroduce transliteration of input strings, add a small helper in `ui.py` or a new module and import it where needed.
+- Feel free to open issues or submit PRs. If you want to reintroduce transliteration of input strings, add a small helper in `gui.py` or a new module and import it where needed.
 
 
 ## Development Team
