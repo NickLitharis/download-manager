@@ -34,8 +34,7 @@ python main.py
 Project layout (canonical files)
 
 - `main.py` — program entrypoint (calls `gui.run_ui()`).
-- `gui.py` — thin wrapper exposing the UI entrypoint. The actual implementation is in `ui.py`.
-- `ui.py` — Tkinter graphical interface and dialogs.
+- `gui.py` — Tkinter graphical interface, dialogs and the `run_ui()` entrypoint.
 - `controller.py` — orchestrates user requests and routes work to downloaders.
 - `audio_downloader.py` — audio download/FFmpeg conversion logic (yt-dlp wrapper).
 - `video_downloader.py` — video download logic (yt-dlp wrapper).
@@ -45,7 +44,7 @@ Project layout (canonical files)
 Notes for students
 
 - This project demonstrates using `yt-dlp` programmatically and integrating `ffmpeg` for audio extraction.
-- The UI is intentionally small so you can trace the flow from `ui.py` -> `controller.py` -> `*_downloader.py`.
+- The UI is intentionally small so you can trace the flow from `gui.py` -> `controller.py` -> `*_downloader.py`.
 
 
 Contributing
