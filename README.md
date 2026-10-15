@@ -16,7 +16,7 @@ source .venv/bin/activate
 2. Install Python dependencies:
 
 ```bash
-pip install -r requirements.txt
+uv sync
 ```
 
 3. Install system ffmpeg (required for audio conversion):

@@ -1,0 +1,15 @@
+[project]
+name = "download-manager"
+version = "0.1.0"
+description = "Desktop audio and video downloader - Tkinter UI over yt-dlp with FFmpeg conversion"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    # Deliberately unpinned: yt-dlp must track upstream or downloads break when
+    # the sites it targets change. uv.lock still pins an exact version per commit.
+    "yt-dlp",
+]
+
+# Application, not a distributable package.
+[tool.uv]
+package = false
